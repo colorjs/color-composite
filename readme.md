@@ -27,7 +27,7 @@ npm install --save color-composite
 
 ## Usage
 
-### `composite([ bottom, ..., top ])`
+### `composite([ top, ..., bottom ])`
 
 Turn a layer of alpha colors (from `bottom` to `top`) into one color
 
