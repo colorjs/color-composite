@@ -29,7 +29,7 @@ npm install --save color-composite
 
 ### `composite([ top, ..., bottom ])`
 
-Turn a layer of alpha colors (from `bottom` to `top`) into one color
+Turn a layer of alpha colors (from `top` to `bottom`) into one color
 
 Colors that are input or output are the same objects as what [`color-parse`](https://npmjs.com/color-parse) returns
 
