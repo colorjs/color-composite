@@ -58,8 +58,3 @@ Made from the [Alpha compositing "over operator"](https://en.wikipedia.org/wiki/
 ## License
 
 MIT © [Jamen Marz](https://git.io/jamen)
-
----
-
-[![version](https://img.shields.io/npm/v/color-composite.svg?style=flat-square)][package] [![travis](https://img.shields.io/travis/color-composite/colorjs.svg?style=flat-square)](https://travis-ci.org/color-composite/colorjs) [![downloads/month](https://img.shields.io/npm/dm/color-composite.svg?style=flat-square)][package] [![downloads](https://img.shields.io/npm/dt/color-composite.svg?style=flat-square)][package] [![license](https://img.shields.io/npm/l/color-composite.svg?style=flat-square)][package]
-[package]: https://npmjs.com/package/color-composite
