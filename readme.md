@@ -1,6 +1,8 @@
 
 # color-composite
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/colorjs/color-composite.svg)](https://greenkeeper.io/)
+
 > For turning layers of alpha colors into one
 
 ```js
