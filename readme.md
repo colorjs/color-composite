@@ -42,7 +42,7 @@ composite([
 
 ### `over(a, b)`
 
-Composes color A over color B.
+Compsites color A over color B.
 
 Takes color strings or objects as input. Returns a color object.
 

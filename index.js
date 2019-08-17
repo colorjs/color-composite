@@ -1,15 +1,14 @@
 const parse = require('color-parse')
-const space = require('color-space')
 
-function composite (layers, space) {
-  var output = layers[0]
-  for (var i = 1, max = layers.length; i < max; i++) {
-    output = over(output, layers[i], space)
+function composite (colors) {
+  var output = colors[0]
+  for (var i = 1, max = colors.length; i < max; i++) {
+    output = over(output, colors[i])
   }
   return output
 }
 
-function over (a, b, space = 'rgb') {
+function over (a, b) {
   if (!a.space) a = parse(a)
   if (!b.space) b = parse(b)
 
