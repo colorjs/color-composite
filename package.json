@@ -1,7 +1,7 @@
 {
   "name": "color-composite",
   "description": "For turning layers of alpha colors into one",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/colorjs/color-composite",
   "author": "Jamen Marz (https://git.io/jamen)",
   "repository": "colorjs/color-composite",
