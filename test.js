@@ -1,34 +1,35 @@
 var test = require('tape')
-var parse = require('color-parse')
-var composite = require('./')
-var over = composite.over
+var { composite, over } = require('./')
 
 test('over function', function (t) {
   t.plan(3)
 
   t.same(
-    over(
-      parse('rgba(127, 195, 255, 0.5)'),
-      parse('rgba(195, 127, 255, 0.75)')
-    ),
-    parse('rgba(156, 166, 255, 0.875)')
+    over('rgba(127, 195, 255, 0.5)', 'rgba(195, 127, 255, 0.75)'),
+    {
+      space: 'rgb',
+      values: [ 156, 166, 255 ],
+      alpha: 0.875
+    }
   )
 
 
   t.same(
-    over(
-      parse('rgba(255, 0, 0, 0.5)'),
-      parse('rgba(0, 255, 0, 0.5)')
-    ),
-    parse('rgba(170, 85, 0, 0.75)')
+    over('rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)'),
+    {
+      space: 'rgb',
+      values: [ 170, 85, 0 ],
+      alpha: 0.75
+    }
   )
 
   t.same(
-    over(
-      parse('rgba(180, 26, 60, 0.25)'),
-      parse('rgba(57, 124, 142, 0.75)')
-    ),
-    parse('rgba(95, 94, 117, 0.8125)')
+    over('rgba(180, 26, 60, 0.25)', 'rgba(57, 124, 142, 0.75)'),
+    {
+      space: 'rgb',
+      values: [ 95, 94, 117 ],
+      alpha: 0.8125
+    }
   )
 })
 
@@ -37,10 +38,14 @@ test('layer function', function (t) {
 
   t.same(
     composite([
-      parse('rgba(255, 0, 0, 0.3)'),
-      parse('rgba(0, 255, 0, 0.3)'),
-      parse('rgba(0, 0, 255, 0.3)')
+      'rgba(255, 0, 0, 0.3)',
+      'rgba(0, 255, 0, 0.3)',
+      'rgba(0, 0, 255, 0.3)'
     ]),
-    parse('rgba(116, 82, 57, 0.657)')
+    {
+      space: 'rgb',
+      values: [ 116, 82, 57 ],
+      alpha: 0.657
+    }
   )
 })

@@ -1,17 +1,29 @@
-module.exports = composite
-composite.over = over
+const parse = require('color-parse')
+const space = require('color-space')
 
 function composite (layers, space) {
   var output = layers[0]
   for (var i = 1, max = layers.length; i < max; i++) {
-    output = over(output, layers[i])
+    output = over(output, layers[i], space)
   }
   return output
 }
 
-function over (a, b) {
-  if (a.alpha === 1) return a
-  if (a.alpha === 0) return b
+function over (a, b, space = 'rgb') {
+  if (!a.space) a = parse(a)
+  if (!b.space) b = parse(b)
+
+  if (a.space !== 'rgb') {
+    throw new Error('First color\'s space ' + a.space + ' is not supported.')
+  } else if (b.space !== 'rgb') {
+    throw new Error('Second color\'s space ' + b.space + ' is not supported.')
+  }
+
+  if (a.alpha === 1) {
+    return a
+  } else if (a.alpha === 0) {
+    return b
+  }
 
   var o = {
     space: b.space,
@@ -28,3 +40,5 @@ function over (a, b) {
 
   return o
 }
+
+module.exports = { composite, over }
