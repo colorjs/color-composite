@@ -1,9 +1,9 @@
-# color-composite
+# color-composite [![test](https://github.com/colorjs/color-composite/actions/workflows/test.js.yml/badge.svg)](https://github.com/colorjs/color-composite/actions/workflows/test.js.yml) [![size](https://img.shields.io/bundlephobia/minzip/color-composite?label=size)](https://bundlephobia.com/result?p=color-composite) ![stable](https://img.shields.io/badge/stability-stable-green)
 
 Composite semitransparent colors.
 
 ```js
-const { composite } = require('color-composite')
+import { composite } from 'color-composite'
 
 const out = composite([
   'rgba(255, 0, 0, 0.3)',
@@ -30,7 +30,7 @@ Composite an array of colors from `top` to `bottom` into one color.
 Takes color strings or objects as input. Returns a color object.
 
 ```js
-const { composite } = require('color-composite')
+import { composite } from 'color-composite'
 
 composite([
   'rgba(255, 0, 0, 0.3)',
@@ -47,7 +47,7 @@ Compsites color A over color B.
 Takes color strings or objects as input. Returns a color object.
 
 ```js
-const { over } = require('color-composite')
+import { over } from 'color-composite'
 
 over(
   'rgba(127, 195, 255, 0.5)',
