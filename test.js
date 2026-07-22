@@ -1,5 +1,5 @@
-var test = require('tape')
-var { composite, over } = require('./')
+import test from 'tape'
+import { composite, over } from './index.js'
 
 test('over function', function (t) {
   t.plan(3)
